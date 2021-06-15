@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('pull code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: '6095c14d-14d8-43db-9724-ee683c0b258c', url: 'https://github.com/yewanwan/idcssdkjava.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], extensions: [], userRemoteConfigs: [[credentialsId: '6095c14d-14d8-43db-9724-ee683c0b258c', url: 'https://github.com/yewanwan/idcssdkjava.git']]])
             }
         }
         stage('build project') {
